@@ -1,4 +1,4 @@
-"""Calculate longitudinal composites, trough timing and post-2011 trends."""
+"""Calculate river–reservoir zone response composites, trough timing and post-2011 trends."""
 from __future__ import annotations
 import importlib
 import logging
@@ -56,7 +56,7 @@ def calculate_station_sediment_scores(
 ) -> pd.DataFrame:
     """Local sediment magnitude-and-seasonality similarity for spatial analysis.
 
-    This is used only in Fig.4c. The system HENI sediment domain remains the
+    This is used only in Fig.4c. The sediment domain score of the system composite score remains the
     suspended-sediment continuity proxy defined in the main analysis.
     """
     flow = data["flow"].copy()
@@ -448,7 +448,7 @@ def pairwise_slope_differences(
 def main():
     global OUT
     args = heni.cli(
-        "Four longitudinal-zone composites, observed troughs and bootstrap trend comparisons.",
+        "Four river–reservoir zone response composites, observed troughs and bootstrap trend comparisons.",
         True,
     ).parse_args()
     OUT = heni.runtime(args, "04_longitudinal_response")

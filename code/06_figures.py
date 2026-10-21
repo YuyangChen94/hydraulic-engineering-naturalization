@@ -17,7 +17,7 @@ LABELS = {
     "sediment": "Sediment",
     "water_environment": "Water environment",
     "aquatic_ecology": "Aquatic ecology",
-    "system_heni": "System HENI",
+    "system_heni": "System composite score",
     "inflow_zone": "Inflow zone",
     "reservoir_zone": "Reservoir zone",
     "below_dam_zone": "Below-dam zone",
@@ -142,8 +142,8 @@ def fig3(out):
         }
     )
     for letter, names, title in [
-        ("b", ["system_heni"], "System HENI"),
-        ("c", list(heni.DOMAIN_COLUMNS), "Four domains"),
+        ("b", ["system_heni"], "System composite score"),
+        ("c", list(heni.DOMAIN_COLUMNS), "Domain scores"),
     ]:
         fig, ax = axis(
             f"Fig. 3{letter} | {title} (n = 20 years)", "Year", "Score (0–1)"
@@ -185,7 +185,7 @@ def fig3(out):
     fig, ax = axis(
         "Fig. 3d | Fixed-weight contributions",
         "Process domain",
-        "Contribution to HENI stage-mean change",
+        "Contribution to system composite score change",
     )
     names = list(heni.DOMAIN_COLUMNS)
     for i, (event, label) in enumerate(
@@ -229,7 +229,7 @@ def fig4(out):
         pd.read_csv(out / "40_longitudinal_centered.csv"),
         out,
         "Fig4a",
-        "Fig. 4a | Longitudinal responses (1998–2017)",
+        "Fig. 4a | River–reservoir zone response composites",
         "Change from own 1998–2002 mean",
     )
     for filename, letter, title in [

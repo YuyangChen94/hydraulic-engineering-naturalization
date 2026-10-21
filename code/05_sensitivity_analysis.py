@@ -19,7 +19,7 @@ ratio_score_high_good = heni.ratio_score_high_good
 def weight_grid_sensitivity(domains: pd.DataFrame) -> pd.DataFrame:
     """Enumerate all four-domain weight combinations on a fixed simplex grid.
 
-    This is a robustness analysis only. Equal weights remain the primary HENI;
+    This is a robustness analysis only. Equal weights remain the primary system composite score specification;
     no alternative weight is selected based on the desired result direction.
     """
     step = float(CONFIG["weight_grid_step"])

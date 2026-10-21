@@ -51,3 +51,9 @@ The diagnostic period is 1998–2017. Reference periods are 1960–1994 for disc
 Coverage and aggregation rules are implemented in scripts 02 and 04. No unit conversion is applied to restricted inputs; supplied units must match the source records used for the manuscript analysis.
 
 TP, TN and DO use mg/L. The alternative four-major-carp series uses 10^8 eggs and fry. No numerical rescaling is applied.
+
+## Score terminology and stable interfaces
+
+These inputs support the reference-based composite score of natural-system conditions. Selected indicators are scored relative to reference conditions, combined into domain scores, and averaged with fixed equal domain weights to form the system composite score. River-zone comparisons use a river–reservoir zone response composite. These scores do not themselves classify a hydraulic engineering naturalization stage.
+
+Names such as `system_heni` and the filename `02_heni_calculation.py` are retained internal aliases; input paths, units, numeric columns and schemas are unchanged. Restricted monitoring data remain subject to the access conditions above.

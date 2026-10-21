@@ -1,4 +1,4 @@
-"""Calculate annual HENI from four fixed process domains."""
+"""Calculate the annual system composite score from four fixed domain scores."""
 from __future__ import annotations
 import argparse
 import logging
@@ -553,7 +553,7 @@ def combine_domains(
     d["system_heni"] = d[required].mean(axis=1, skipna=False)
     if d.system_heni.isna().any():
         years = d.loc[d.system_heni.isna(), "year"].tolist()
-        raise ValueError(f"System HENI is unavailable for analysis years: {years}")
+        raise ValueError(f"System composite score is unavailable for analysis years: {years}")
     return d
 
 
@@ -652,7 +652,7 @@ def read_inputs(input_dir):
 
 def main():
     parser = cli(
-        "Calculate the four fixed HENI domains and their annual equal-weight aggregate.",
+        "Calculate four fixed domain scores and their annual equal-weight system composite score.",
         True,
     )
     args = parser.parse_args()
